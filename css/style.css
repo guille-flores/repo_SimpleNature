@@ -67,6 +67,15 @@
     flex-basis: 100%;
 }
 
+.carousel .carousel-item{
+    height: 75vh;
+}
+
+.carousel-item > img{
+    height: 100%;
+    width:auto;
+}
+
 @media screen and (max-width:425px){
     .navbar-brand{
         width: 100%;
