@@ -8,6 +8,7 @@
     background-color: black;
 }
 
+/* Nav */
 .navbar-brand{
     width: 65%;
     margin-right: 0% !important;
@@ -40,6 +41,7 @@
     color: #000 !important;
 }
 
+/* Footer */
 #contacto{
     box-shadow: 0 50vh 0 50vh #000;
 }
@@ -52,6 +54,7 @@
     text-align: justify;
 }
 
+/* Quejas y Sugerencias */
 .form--border{
     border-radius: 25px;
     background-color: rgb(180, 178, 178);
@@ -67,6 +70,8 @@
     flex-basis: 100%;
 }
 
+
+/* Index */
 .carousel .carousel-item{
     height: 75vh;
 }
@@ -76,6 +81,40 @@
     width:auto;
 }
 
+.div--color{
+    background-color: rgb(233, 233, 235);
+}
+
+.p--align{
+    text-align: justify;
+}
+
+/* Productos */
+.flipcard{
+    transition: transform 0.8s;
+    background-color: rgb(145, 205, 207);
+}
+
+.flip__back{
+    transform: rotateY(180deg);
+    opacity: 0;
+}
+
+.card:hover .flipcard{
+    transform: rotateY(180deg);
+}
+
+.card:hover .flip__front>*{
+    opacity: 0%;
+}
+
+.card:hover .flip__back{
+    opacity: 100;
+    transition-delay: 0.5s;
+}
+
+
+/* Media Queries */
 @media screen and (max-width:425px){
     .navbar-brand{
         width: 100%;
@@ -92,5 +131,10 @@
 
     .form__input{
         text-align: center;
+    }
+
+    .div--color{
+        margin: 1rem !important;
+        height:50vh !important;
     }
 }
