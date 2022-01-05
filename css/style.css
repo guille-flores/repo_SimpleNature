@@ -92,27 +92,23 @@
 /* Productos */
 .flipcard{
     transition: transform 0.8s;
-    background-color: rgb(145, 205, 207);
-}
-
-.flip__back{
-    transform: rotateY(180deg);
-    opacity: 0;
+    background-color: rgb(0, 0, 0);
+    transform-style: preserve-3d;
 }
 
 .card:hover .flipcard{
     transform: rotateY(180deg);
 }
 
-.card:hover .flip__front>*{
-    opacity: 0%;
+.flip__back{
+    transform: rotateY(180deg);
+    color:azure;
 }
 
-.card:hover .flip__back{
-    opacity: 100;
-    transition-delay: 0.5s;
+.flip__back, .flip__front{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
-
 
 /* Media Queries */
 @media screen and (max-width:425px){
