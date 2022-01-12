@@ -1,0 +1,14 @@
+@import "./variables";
+#contact{
+    box-shadow: $shadow;
+    background-color: black;
+    &--color{
+        &:hover{
+            color: $purple;
+        }
+    }
+    
+    .footer__location{
+        text-align: justify;
+    }
+}

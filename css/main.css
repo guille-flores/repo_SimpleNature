@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.mainpage__header {
+  background-color: black; }
+  .mainpage__header .navbar-brand {
+    width: 65%;
+    margin-right: 0% !important; }
+  .mainpage__header .nav-item {
+    color: white;
+    margin: 20px; }
+    .mainpage__header .nav-item .nav-link {
+      color: white; }
+      .mainpage__header .nav-item .nav-link:hover {
+        color: #6969e7 !important; }
+    .mainpage__header .nav-item #products--color {
+      color: white;
+      font-weight: 500; }
+    .mainpage__header .nav-item .dropdown-item {
+      color: white !important; }
+      .mainpage__header .nav-item .dropdown-item:hover {
+        background-color: white !important;
+        color: black !important; }
+
+#contact {
+  box-shadow: 0 50vh 0 50vh #000;
+  background-color: black; }
+  #contact--color:hover {
+    color: #6969e7; }
+  #contact .footer__location {
+    text-align: justify; }
+
+.form--border {
+  border-radius: 25px;
+  background-color: #e6e4e4;
+  padding: 1rem; }
+  .form--border .form__input--button {
+    padding-left: 15%;
+    padding-right: 15%; }
+  .form--border .form__submit, .form--border .form__reset {
+    flex-basis: 100%; }
+
+.mainpage .carousel .carousel-item {
+  height: 75vh; }
+  .mainpage .carousel .carousel-item > img {
+    height: 100%;
+    width: auto; }
+
+.div--color {
+  background-color: #e9e9eb; }
+  .div--color .p--align {
+    text-align: justify; }
+
+.card .flipcard {
+  transition: transform 0.8s;
+  background-color: black;
+  transform-style: preserve-3d; }
+  .card .flipcard .flip__back {
+    transform: rotateY(180deg);
+    color: azure; }
+  .card .flipcard .flip__back, .card .flipcard .flip__front {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+
+.card:hover .flipcard {
+  transform: rotateY(180deg);
+  color: azure; }
+
+@media screen and (max-width: 425px) {
+  .navbar-brand {
+    width: 100%; }
+  .footer__location {
+    text-align: center; }
+  .form--border {
+    border-radius: 0px;
+    text-align: center; }
+  .form__input {
+    text-align: center; }
+  .div--color {
+    margin: 1rem !important;
+    height: 50vh !important; } }

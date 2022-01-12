@@ -1,0 +1,31 @@
+@import "./variables";
+.mainpage__header{
+    background-color: black;
+    .navbar-brand{
+        width: 65%;
+        margin-right: 0% !important;
+    }
+    .nav-item{
+        color: white;
+        margin: 20px;
+        .nav-link{
+            color: white;
+            &:hover{
+                color: $purple !important;
+            }
+        }
+        
+        #products--color{
+            color:white;
+            font-weight: 500;
+        }
+
+        .dropdown-item{
+            color:white !important;
+            &:hover{
+                background-color: white !important;
+                color: black !important;
+            }
+        }
+    }
+}
