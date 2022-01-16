@@ -17,5 +17,16 @@
     &:hover .flipcard{
         transform: rotateY(180deg);
         color: map-get($estilos, text_white);
+        @include mobile{
+            color: map-get($estilos, text_white) !important;
+            display: visible !important;
+        }
     }
+}
+
+.carousel-control--color{
+    align-items: map-get($estilos, center);
+    justify-content: map-get($estilos, center);
+    @include buttonColor(rgb(7, 7, 7));
+    border-radius: 50%;
 }

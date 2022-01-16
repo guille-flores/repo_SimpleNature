@@ -17,4 +17,7 @@ $estilos:(
 };
 @mixin margins($top, $right, $bottom, $left){
     margin: $top $right $bottom $left;
+};
+@mixin buttonColor($bkg){
+    background-color: $bkg;
 }
