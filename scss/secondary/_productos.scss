@@ -18,7 +18,7 @@
     &:hover .flipcard{
         transform: rotateY(180deg);
         color: map-get($estilos, text_white);
-        .flip__back{
+        .flip__back>p{
             z-index: 2;
             visibility: visible !important;
         }
