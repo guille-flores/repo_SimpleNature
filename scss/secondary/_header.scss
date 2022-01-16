@@ -1,0 +1,35 @@
+@import "./variables";
+@import "./mediaqueries";
+.mainpage__header{
+    background-color: map-get($estilos, bck_dark);
+    .navbar-brand{
+        width: 65%;
+        @include margins(0,0,0,0);
+        @include mobile{
+            width: 100%;
+        }
+    }
+    .nav-item{
+        color: map-get($estilos, text_white);
+        @include margins(20px,20px,20px,20px);
+        .nav-link{
+            color: map-get($estilos, text_white);
+            &:hover{
+                color: $purple !important;
+            }
+        }
+        
+        #products--color{
+            color:map-get($estilos, text_white);
+            font-weight: 500;
+        }
+
+        .dropdown-item{
+            color:map-get($estilos, text_white) !important;
+            &:hover{
+                background-color: map-get($estilos, bck_light) !important;
+                color: map-get($estilos, text_dark) !important;
+            }
+        }
+    }
+}

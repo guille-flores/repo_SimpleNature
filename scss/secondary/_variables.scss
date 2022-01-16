@@ -1,0 +1,20 @@
+$shadow:0 50vh 0 50vh #000;
+$purple:rgb(105, 105, 231);
+$estilos:(
+    justify: justify,
+    center: center,
+    left: left,
+    right: right,
+    1rem: 1rem,
+    bck_dark: black,
+    bck_light: white,
+    bck_gray: rgb(230, 230, 230),
+    text_dark: black,
+    text_white: white,
+);
+@mixin paddings($top, $right, $bottom, $left){
+    padding: $top $right $bottom $left;
+};
+@mixin margins($top, $right, $bottom, $left){
+    margin: $top $right $bottom $left;
+}

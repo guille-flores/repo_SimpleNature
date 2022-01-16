@@ -1,0 +1,25 @@
+@import "./variables";
+@import "./mediaqueries";
+.form{
+    &--border{
+        border-radius: 25px;
+        background-color: map-get($estilos, bck_gray);
+        padding: map-get($estilos, 1rem);
+        .form__input{
+            @include mobile{  
+                text-align: map-get($estilos, center);
+            }
+        }
+        .form__input--button{
+            @include paddings(0,15%,0,15%)
+        }
+        .form__submit, .form__reset{
+            flex-basis: 100%;
+        }
+        @include mobile{
+            border-radius: 0px;
+            text-align: center;
+        }
+
+    }
+}

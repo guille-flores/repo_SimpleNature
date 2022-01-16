@@ -1,0 +1,12 @@
+@import "./variables";
+@import "./mediaqueries";
+.div--color{
+    background-color: map-get($estilos, bck_gray);
+    .p--align{
+        text-align: map-get($estilos, justify);
+    }
+    @include mobile{    
+        margin: 1rem !important;
+        height:50vh !important;
+    }
+}

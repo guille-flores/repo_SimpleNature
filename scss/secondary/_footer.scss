@@ -1,0 +1,18 @@
+@import "./variables";
+@import "./mediaqueries";
+#contact{
+    box-shadow: $shadow;
+    background-color: map-get($estilos, bck_dark);
+    &--color{
+        &:hover{
+            color: $purple;
+        }
+    }
+    
+    .footer__location{
+        text-align: map-get($estilos, justify);
+        @include mobile{    
+            text-align: center;
+        }
+    }
+}

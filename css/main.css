@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.mainpage__header {
+  background-color: black; }
+  .mainpage__header .navbar-brand {
+    width: 65%;
+    margin: 0 0 0 0; }
+    @media screen and (max-width: 425px) {
+      .mainpage__header .navbar-brand {
+        width: 100%; } }
+  .mainpage__header .nav-item {
+    color: white;
+    margin: 20px 20px 20px 20px; }
+    .mainpage__header .nav-item .nav-link {
+      color: white; }
+      .mainpage__header .nav-item .nav-link:hover {
+        color: #6969e7 !important; }
+    .mainpage__header .nav-item #products--color {
+      color: white;
+      font-weight: 500; }
+    .mainpage__header .nav-item .dropdown-item {
+      color: white !important; }
+      .mainpage__header .nav-item .dropdown-item:hover {
+        background-color: white !important;
+        color: black !important; }
+
+#contact {
+  box-shadow: 0 50vh 0 50vh #000;
+  background-color: black; }
+  #contact--color:hover {
+    color: #6969e7; }
+  #contact .footer__location {
+    text-align: justify; }
+    @media screen and (max-width: 425px) {
+      #contact .footer__location {
+        text-align: center; } }
+
+.form--border {
+  border-radius: 25px;
+  background-color: #e6e6e6;
+  padding: 1rem; }
+  @media screen and (max-width: 425px) {
+    .form--border .form__input {
+      text-align: center; } }
+  .form--border .form__input--button {
+    padding: 0 15% 0 15%; }
+  .form--border .form__submit, .form--border .form__reset {
+    flex-basis: 100%; }
+  @media screen and (max-width: 425px) {
+    .form--border {
+      border-radius: 0px;
+      text-align: center; } }
+
+.mainpage .carousel-item {
+  height: 75vh; }
+  .mainpage .carousel-item > img {
+    height: 100%;
+    width: auto; }
+
+.div--color {
+  background-color: #e6e6e6; }
+  .div--color .p--align {
+    text-align: justify; }
+  @media screen and (max-width: 425px) {
+    .div--color {
+      margin: 1rem !important;
+      height: 50vh !important; } }
+
+.card .flipcard {
+  transition: transform 0.8s;
+  background-color: black;
+  transform-style: preserve-3d; }
+  .card .flipcard .flip__front, .card .flipcard .flip__back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .card .flipcard .flip__back {
+    transform: rotateY(180deg);
+    color: white; }
+
+.card:hover .flipcard {
+  transform: rotateY(180deg);
+  color: white; }

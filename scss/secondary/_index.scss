@@ -1,0 +1,12 @@
+@import "./variables";
+.mainpage{
+    .carousel{
+        &-item{
+            height: 75vh;
+            > img{
+                height: 100%;
+                width:auto;
+            }
+        }
+    }
+}

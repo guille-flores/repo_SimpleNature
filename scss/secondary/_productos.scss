@@ -1,0 +1,21 @@
+@import "./variables";
+.card{
+    .flipcard{
+        transition: transform 0.8s;
+        background-color: map-get($estilos, bck_dark);
+        transform-style: preserve-3d;      
+        .flip__front{
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        .flip__back{
+            @extend .flip__front;
+            transform: rotateY(180deg);
+            color: map-get($estilos, text_white);
+        }
+    }
+    &:hover .flipcard{
+        transform: rotateY(180deg);
+        color: map-get($estilos, text_white);
+    }
+}
