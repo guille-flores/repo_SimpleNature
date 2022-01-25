@@ -75,7 +75,8 @@
   transform-style: preserve-3d; }
   .card .flipcard .flip__front, .card .flipcard .flip__back {
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden; }
+    backface-visibility: hidden;
+    visibility: visible; }
   .card .flipcard .flip__back {
     transform: rotateY(180deg);
     color: white; }
@@ -83,10 +84,6 @@
 .card:hover .flipcard {
   transform: rotateY(180deg);
   color: white; }
-  @media screen and (max-width: 425px) {
-    .card:hover .flipcard {
-      color: white !important;
-      display: visible !important; } }
 
 .carousel-control--color {
   align-items: center;

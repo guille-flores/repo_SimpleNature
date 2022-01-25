@@ -7,7 +7,7 @@
         .flip__front{
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-            z-index: 1;
+            visibility:visible;
         }
         .flip__back{
             @extend .flip__front;
@@ -18,10 +18,7 @@
     &:hover .flipcard{
         transform: rotateY(180deg);
         color: map-get($estilos, text_white);
-        .flip__back>p{
-            z-index: 2;
-            visibility: visible !important;
-        }
+        
     }
 }
 
