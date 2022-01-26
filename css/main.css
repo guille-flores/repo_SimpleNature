@@ -76,7 +76,9 @@
   .card .flipcard .flip__front, .card .flipcard .flip__back {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    visibility: visible; }
+    visibility: visible;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d; }
   .card .flipcard .flip__back {
     transform: rotateY(180deg);
     color: white; }

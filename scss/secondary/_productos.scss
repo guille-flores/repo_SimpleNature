@@ -8,6 +8,8 @@
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             visibility:visible;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
         }
         .flip__back{
             @extend .flip__front;
@@ -18,7 +20,6 @@
     &:hover .flipcard{
         transform: rotateY(180deg);
         color: map-get($estilos, text_white);
-        
     }
 }
 
