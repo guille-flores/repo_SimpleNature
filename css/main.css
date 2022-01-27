@@ -75,19 +75,16 @@
     transition: transform 0.8s;
     background-color: black;
     transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    z-index: 1; }
+    -webkit-transform-style: preserve-3d; }
     .card .flipcard .flip__front, .card .flipcard .flip__back {
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       background-color: transparent !important;
-      z-index: 1; }
+      z-index: 2; }
     .card .flipcard .flip__back {
       transform: rotateY(180deg);
       color: white;
-      z-index: 2; }
-      .card .flipcard .flip__back p {
-        z-index: 3; }
+      z-index: 1; }
   .card:hover .flipcard {
     transform: rotateY(180deg);
     color: white; }
