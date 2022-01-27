@@ -14,7 +14,6 @@
             transform: rotateY(180deg);
             -webkit-transform: rotateY(180deg);
             color: map-get($estilos, text_white);
-            visibility: visible;
         }
     }
     &:hover .flipcard{
