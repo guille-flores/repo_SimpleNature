@@ -73,9 +73,7 @@
   transition: transform 0.8s;
   background-color: black;
   transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  position: relative;
-  height: 100%; }
+  -webkit-transform-style: preserve-3d; }
   .card .flipcard .flip__front, .card .flipcard .flip__back {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
@@ -83,8 +81,7 @@
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     color: white;
-    z-index: 1000;
-    position: absolute; }
+    visibility: visible; }
 
 .card:hover .flipcard {
   transform: rotateY(180deg);

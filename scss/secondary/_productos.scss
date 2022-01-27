@@ -5,8 +5,6 @@
         background-color: map-get($estilos, bck_dark);
         transform-style: preserve-3d;
         -webkit-transform-style: preserve-3d;  
-        position: relative;
-        height: 100%;
         .flip__front{
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
@@ -16,8 +14,7 @@
             transform: rotateY(180deg);
             -webkit-transform: rotateY(180deg);
             color: map-get($estilos, text_white);
-            z-index: 1000;
-            position:absolute;
+            visibility: visible;
         }
     }
     &:hover .flipcard{
