@@ -83,10 +83,12 @@
       z-index: 2; }
     .card .flipcard .flip__back {
       transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
       color: white;
       z-index: 1; }
   .card:hover .flipcard {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
     color: white; }
 
 .carousel-control--color {
