@@ -69,27 +69,28 @@
       margin: 1rem !important;
       height: 50vh !important; } }
 
-.card .flipcard {
-  transition: transform 0.8s;
-  background-color: black;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d; }
-  .card .flipcard .flip__front, .card .flipcard .flip__back {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    visibility: visible; }
-  .card .flipcard .flip__back {
+.card {
+  background-color: transparent !important; }
+  .card .flipcard {
+    transition: transform 0.8s;
+    background-color: black;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    z-index: 1; }
+    .card .flipcard .flip__front, .card .flipcard .flip__back {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      background-color: transparent !important;
+      z-index: 1; }
+    .card .flipcard .flip__back {
+      transform: rotateY(180deg);
+      color: white;
+      z-index: 2; }
+      .card .flipcard .flip__back p {
+        z-index: 3; }
+  .card:hover .flipcard {
     transform: rotateY(180deg);
     color: white; }
-
-.card:hover .flipcard {
-  transform: rotateY(180deg);
-  color: white; }
-
-.card:hover .flip__back {
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
-  visibility: visible; }
 
 .carousel-control--color {
   align-items: center;
