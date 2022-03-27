@@ -116,12 +116,12 @@ while(!finalizar){
 if(!cancelled){
     if(login){
         if(confirm(`¡Gracias por tu compra, ${usuario.name}!\n\nTu total es de \$${total} MXN, y cuentas con un descuento del 15%.\n\nEn total deberás pagar \$${total-discount(login, total)} MXN.\n\nSe te hará llegar tu pedido a ${usuario.direccion}. ¿Deseas continuar?`)){
-            alert("!Gracias y vuelva pronto¡");
+            alert("¡Gracias y vuelva pronto!");
         }
     }else{
         let ubicacion = prompt(`¡Gracias por tu compra!\n\nTu total es de \$${total} MXN.\n\nPor favor ingresa tu dirección para enviar tu pedido.`);
         if(confirm(`La dirección es ${ubicacion}.\n\nEl total es de \$${total} MXN. ¿Deseas continuar?`)){
-            alert("!Gracias y vuelva pronto¡");
+            alert("¡Gracias y vuelva pronto!");
         }
     }
 }
