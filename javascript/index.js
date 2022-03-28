@@ -103,6 +103,8 @@ while(!finalizar){
                 alert("Opción inválida, por favor ingrese solo el número de la opción deseada del menú.");
             
         }
+    }else if(opcion == ''){
+        alert("Opción inválida, por favor ingrese solo el número de la opción deseada del menú.");
     }else{
         cancelled = true;
         break; 
