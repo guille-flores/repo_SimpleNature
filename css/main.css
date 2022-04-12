@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box; }
 
+
 .mainpage__header {
   background-color: black; }
   .mainpage__header .navbar-brand {
@@ -37,6 +38,7 @@
     @media screen and (max-width: 425px) {
       #contact .footer__location {
         text-align: center; } }
+
 
 .form--border {
   border-radius: 25px;
