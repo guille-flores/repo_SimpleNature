@@ -1,8 +1,16 @@
+let user = prompt("¡Bienvenido a Simple Nature!\n\nIngrese su nombre: ");
 const carrito = [];
 const hoy = new Date();
 const arriving = new Date();
 arriving.setDate(arriving.getDate()+7);
 var mainpage = document.getElementById("mainpage__general");
+
+let h2 = document.createElement("h2");
+h2.innerHTML = `Hola ${user}, por favor selecciona tus productos.`;
+mainpage.prepend(h2);
+let h1 = document.createElement("h1");
+h1.innerHTML = `Su carrito tiene los siguientes productos:`;
+mainpage.append(h1)
 
 //Definiendo las clases que son los productos
 class NewProduct{
@@ -20,6 +28,9 @@ class NewProduct{
                 if (!carrito.includes(this.product)){
                     carrito.push(this.product);
                     alert(`${this.product} se ha agregado al carrito, tu total es de \$${total+this.price}\n\nSerá entregado en ${arriving}`);
+                    let li = document.createElement("li");
+                    li.innerHTML = this.product;
+                    mainpage.append(li);
                 }
                 return parseFloat(this.price);
             }else{
@@ -70,3 +81,4 @@ botones[12].onclick = () => {total = total + agregarCarrito(productos[12].id)};
 function agregarCarrito(id){
     return productos[productos.map(function(x){return x.id}).indexOf(id)].addOrder();
 }
+
