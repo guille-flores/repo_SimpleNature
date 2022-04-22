@@ -3,7 +3,7 @@ if(sessionStorage.getItem("usuario") == "null"){
     sessionStorage.setItem('usuario', user);
 }
 
-if(localStorage.getItem("carrito").length != "null"){
+if(localStorage.getItem("carrito").length != null){
     var carrito = JSON.parse(localStorage.getItem("carrito")); //obtaining the shopping car in case the user edited it so we can work over it
 }else{
     var carrito = [];
