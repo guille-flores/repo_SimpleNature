@@ -2,13 +2,10 @@ if(sessionStorage.getItem("usuario") == "null"){
     let user = prompt("¡Bienvenido a Simple Nature!\n\nIngrese su nombre: ");
     sessionStorage.setItem('usuario', user);
 }
-try{
-    if(localStorage.getItem("carrito").length>0){
-        var carrito = JSON.parse(localStorage.getItem("carrito")); //obtaining the shopping car in case the user edited it so we can work over it
-    }else{
-        var carrito = [];
-    }
-}catch{
+
+if(localStorage.getItem("carrito").length != "null"){
+    var carrito = JSON.parse(localStorage.getItem("carrito")); //obtaining the shopping car in case the user edited it so we can work over it
+}else{
     var carrito = [];
 }
 
