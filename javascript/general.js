@@ -1,13 +1,7 @@
-if(sessionStorage.getItem("usuario") === null){
-    let user = prompt("¡Bienvenido a Simple Nature!\n\nIngrese su nombre: ");
-    sessionStorage.setItem('usuario', user);
-}
+const user = JSON.parse(sessionStorage.getItem("usuario")) || prompt("¡Bienvenido a Simple Nature!\n\nIngrese su nombre: "); //obtaining the user name or not if it already exists
+sessionStorage.setItem("usuario", JSON.stringify(user));
 
-if(localStorage.getItem("carrito") != null){
-    var carrito = JSON.parse(localStorage.getItem("carrito")); //obtaining the shopping car in case the user edited it so we can work over it
-}else{
-    var carrito = [];
-}
+var carrito = JSON.parse(localStorage.getItem("carrito")) || []; //if the shopping car has items, it will use it, otherwise will create the empty list to store the items to select
 
 //Definiendo las clases que son los productos
 class NewProduct{
@@ -20,29 +14,43 @@ class NewProduct{
 
     addOrder(){
         if (this.stock > 0){
-            if(confirm(`Este producto tiene un costo de \$${this.price} MXN, ¿seguro que desea agregarlo al carrito?`)){
-                this.stock = this.stock - 1;
-                if (carrito.filter(x => x.producto == this.product).length <= 0){
-                    const toadd = {
-                        producto: this.product,
-                        precio: this.price,
-                        cantidad: 1
+            Swal.fire({
+                title: `Este producto tiene un costo de \$${this.price} MXN, ¿seguro que desea agregarlo al carrito?`,
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Sí, lo quiero!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    this.stock = this.stock - 1;
+                    if (carrito.filter(x => x.producto == this.product).length <= 0){
+                        const toadd = {
+                            producto: this.product,
+                            precio: this.price,
+                            cantidad: 1
+                        }
+                        carrito.push(toadd);
+                    }else{
+                        let posicion = carrito.map(x => x.producto).indexOf(this.product); //we will identify the repeated item so we can change the quantity
+                        carrito[posicion].cantidad += 1;
                     }
-                    carrito.push(toadd);
-                }else{
-                    let posicion = carrito.map(x => x.producto).indexOf(this.product); //we will identify the repeated item so we can change the quantity
-                    carrito[posicion].cantidad += 1;
+                    total += this.price;
+                    localStorage.setItem("carrito", JSON.stringify(carrito)); //creating an HTML element to add in a table
+                    Swal.fire({
+                        icon: 'success',
+                        title: `${this.product} se ha agregado a tu carrito.`,
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                 }
-                total += this.price;
-                localStorage.setItem("carrito", JSON.stringify(carrito)); //creating an HTML element to add in a table
-                alert(`${this.product} se ha agregado al carrito`);
-                return parseFloat(this.price);
-            }else{
-                return 0;
-            }
+              })
         }else{
-            alert(`Lo sentimos, por el momento no contamos con ${this.product}.`);
-            return 0;
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `Lo sentimos, no contamos con más ${this.product} por el momento.`,
+              })
         }
     }
 }

@@ -9,7 +9,8 @@ var total = 0;
 function crearProductoCarrito(){
     let tabla = document.getElementById("tcarrito");
     tabla.innerHTML = "";
-    total = 0
+    total = 0;
+    carrito.length == 0 && Swal.fire('¡Oh no!\nTu carrito está vacío.'); //showing an alert in case the car is empty
     for (let ii=0; ii<carrito.length; ii++){ //to modify the rows of the products the user has in their car to show in HTML
         let articulo = carrito[ii].producto;
         let precio = carrito[ii].precio;
@@ -39,15 +40,33 @@ function crearProductoCarrito(){
 }
 
 function eliminarArticulo(ii){
-    let articulocarrito = document.getElementById(`${ii}`);
-    for (let ii=0; ii<productos.length; ii++){
-        if (productos[ii].product == articulocarrito.getElementsByTagName("td")[0].innerText){ //We will find the product and increment the stock as we will delete it from the car
-            productos[ii].stock += 1;
-            total -= productos[ii].price*parseFloat(articulocarrito.getElementsByTagName("td")[2].innerText);
+    Swal.fire({
+        title: '¿Estás seguro de que deseas eliminar este producto de tu carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡Sí, elimínalo!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            let articulocarrito = document.getElementById(`${ii}`);
+            for (let ii=0; ii<productos.length; ii++){
+                if (productos[ii].product == articulocarrito.getElementsByTagName("td")[0].innerText){ //We will find the product and increment the stock as we will delete it from the car
+                    productos[ii].stock += 1;
+                    total -= productos[ii].price*parseFloat(articulocarrito.getElementsByTagName("td")[2].innerText);
+                }
+            }
+            articulocarrito.innerHTML = ""; //we make the table blank
+            carrito.splice(ii,1) //removing the element from the array so it doesn't get written again
+            crearProductoCarrito();
+            localStorage.setItem("carrito", JSON.stringify(carrito)); //updating the shopping car
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Artículo eliminado',
+                showConfirmButton: false,
+                timer: 1000
+              })
         }
-    }
-    articulocarrito.innerHTML = ""; //we make the table blank
-    carrito.splice(ii,1) //removing the element from the array so it doesn't get written again
-    crearProductoCarrito();
-    localStorage.setItem("carrito", JSON.stringify(carrito)); //updating the shopping car
+      })
 }
