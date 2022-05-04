@@ -58,44 +58,25 @@ class NewProduct{
 var total = 0
 const productos = [];
 
-//Definiendo un fetch para simular la conexion con un JSON y obtener los productos
-
-
-productos.push(new NewProduct("ChIA", 50, "chia", 5));
-productos.push(new NewProduct("lenteja criolla", 50, "lenteja_criolla", 1));
-productos.push(new NewProduct("Frijol Negro", 30, "frijol_negro", 2));
-productos.push(new NewProduct("Frijol Pinto", 30, "frijol_pinto", 2));
-productos.push(new NewProduct("Arroz Blanco", 20, "arroz_blanco", 1));
-productos.push(new NewProduct("Arroz Integral", 25, "arroz_integral", 0));
-productos.push(new NewProduct("Bebida de Coco", 25,"agua_coco", 4));
-productos.push(new NewProduct("Alimento Líquido de Coco", 25,"leche_coco", 4));
-productos.push(new NewProduct("Bebida de Coco sin Azúcar", 25,"agua_coco_sa", 4));
-productos.push(new NewProduct("Bebida de Almendras", 25,"agua_almendras", 4));
-productos.push(new NewProduct("Bebida de Almendras sin Azúcar", 30, "agua_almendras_sa", 10));
-productos.push(new NewProduct( "Alimento Líquido de Macadamia", 18, "agua_macadamia", 2));
-productos.push(new NewProduct("Jugo de Manzana", 80, "jugo_manzana", 5));
-localStorage.setItem("productos", JSON.stringify(productos));
+productos.push(new NewProduct("Aceite de Aguacate", 80, "aceite_aguacate", 0));
+productos.push(new NewProduct( "Aceite de Coco", 18, "aceite_coco", 10));
+productos.push(new NewProduct( "Aceite de Girasol", 18, "aceite_girasol", 12));
+productos.push(new NewProduct("Aceite de Oliva", 80, "aceite_oliva", 0));
+productos.push(new NewProduct("Crema de Cacahuate", 80, "crema_cacahuate", 1));
 
 var botones = [];
 for (let ii=0; ii<productos.length; ii++){
     botones[ii] = document.getElementById(productos[ii].id);
 }
 
-botones[0].onclick = () => {agregarCarrito(productos[0].id)}; 
-botones[1].onclick = () => {agregarCarrito(productos[1].id)}; 
-botones[2].onclick = () => {agregarCarrito(productos[2].id)}; 
-botones[3].onclick = () => {agregarCarrito(productos[3].id)}; 
-botones[4].onclick = () => {agregarCarrito(productos[4].id)}; 
-botones[5].onclick = () => {agregarCarrito(productos[5].id)}; 
-botones[6].onclick = () => {agregarCarrito(productos[6].id)}; 
-botones[7].onclick = () => {agregarCarrito(productos[7].id)}; 
-botones[8].onclick = () => {agregarCarrito(productos[8].id)}; 
-botones[9].onclick = () => {agregarCarrito(productos[9].id)}; 
-botones[10].onclick = () => {agregarCarrito(productos[10].id)}; 
-botones[11].onclick = () => {agregarCarrito(productos[11].id)}; 
-botones[12].onclick = () => {agregarCarrito(productos[12].id)}; 
+console.log(botones.length)
+console.log(botones[13])
+botones[0].onclick = () => {total = total + agregarCarrito(productos[0].id)}; 
+botones[1].onclick = () => {total = total + agregarCarrito(productos[1].id)};
+botones[2].onclick = () => {total = total + agregarCarrito(productos[2].id)}; 
+botones[3].onclick = () => {total = total + agregarCarrito(productos[3].id)}; 
+botones[4].onclick = () => {total = total + agregarCarrito(productos[4].id)};   
 
 function agregarCarrito(id){
     productos[productos.map(function(x){return x.id}).indexOf(id)].addOrder();
 }
-

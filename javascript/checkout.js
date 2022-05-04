@@ -33,7 +33,7 @@ function crearProductoCarrito(){
     footercarrito.innerHTML = 
     `
     <tr>
-        <td class="right" colspan="3">Total:</td><td class="right">$${total}</td>
+        <td class="right" colspan="3">Total:</td><td class="right">$${total}</td><td><button class="btn btn-success" >Pagar</button></td>
     </tr>
     `;
     localStorage.setItem("carrito", JSON.stringify(carrito)); //updating the shopping car
@@ -70,3 +70,5 @@ function eliminarArticulo(ii){
         }
       })
 }
+
+
