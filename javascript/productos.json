@@ -1,5 +1,116 @@
-[
-    {"producto": "Arroz Blanco", "precio": 30, "id": 1},
-    {"producto": "Arroz Blanco", "precio": 30, "id": 2},
-    {"producto": "Arroz Blanco", "precio": 30, "id": 3},
-]
+{
+    "Leguminosas y Legumbres": 
+    [
+        {
+            "producto": "Lenteja orgánica", 
+            "precio": 40, 
+            "id": 101,
+            "stock": 2,
+            "descripcion": "Lenteja Criolla. 300gr.",
+            "image": "../../imagenes/lenteja.jpg"
+        },
+        {
+            "producto": "Chia",
+            "precio": 50,
+            "id": 102,
+            "stock": 2,
+            "descripcion": "Semillas de Chia orgánica. 200gr.",
+            "image": "../../imagenes/chia.png"
+        },
+        {
+            "producto": "Frijol Negro",
+            "precio": 20,
+            "id": 103,
+            "stock": 6,
+            "descripcion": "Frijol negro orgánico. 500gr.",
+            "image": "../../imagenes/frijol_negro.jpg"
+        },
+        {
+            "producto": "Frijol Pinto",
+            "precio": 20,
+            "id": 104,
+            "stock": 10,
+            "descripcion": "Frijol pinto orgánico. 500gr.",
+            "image": "../../imagenes/frijol_pinto.jpg"
+        }
+    ],
+    "Cereales":
+    [
+        {
+            "producto": "Arroz Blanco", 
+            "precio": 25, 
+            "id": 201,
+            "stock": 15,
+            "descripcion": "Arroz Blanco orgánico. 500gr.",
+            "image": "../../imagenes/arroz_blanco.jpg"
+        },
+        {
+            "producto": "Arroz Integral", 
+            "precio": 30, 
+            "id": 202,
+            "stock": 0,
+            "descripcion": "Arroz Integral orgánico. 500gr.",
+            "image": "../../imagenes/arroz_integral.jpg"
+        }
+    ],
+    "Bebidas":
+    [
+        {
+            "producto": "Agua de Coco", 
+            "precio": 25, 
+            "id": 301,
+            "stock": 4,
+            "descripcion": "Agua de Coco orgánica sin azucar. 250ml.",
+            "image": "../../imagenes/agua_coco.jpg"
+        },
+        {
+            "producto": "Alimento Líquido de Almendras", 
+            "precio": 25, 
+            "id": 302,
+            "stock": 0,
+            "descripcion": "Alimento líquido de almendras orgánico. 500ml.",
+            "image": "../../imagenes/bebida_almendra.jpg"
+        },
+        {
+            "producto": "Alimento Líquido de Almendras (sin azucar)", 
+            "precio": 30, 
+            "id": 303,
+            "stock": 0,
+            "descripcion": "Alimento líquido de almendras orgánico sin azucar. 500ml.",
+            "image": "../../imagenes/bebida_almendra_sinazucar.jpg"
+        },
+        {
+            "producto": "Alimento Líquido de Coco", 
+            "precio": 30, 
+            "id": 304,
+            "stock": 20,
+            "descripcion": "Alimento líquido de coco orgánico. 500ml.",
+            "image": "../../imagenes/bebida_coco.jpg"
+        },
+        {
+            "producto": "Alimento Líquido de Coco (sin azucar)", 
+            "precio": 35, 
+            "id": 305,
+            "stock": 5,
+            "descripcion": "Alimento líquido de coco orgánico sin azucar. 500ml.",
+            "image": "../../imagenes/bebida_coco_sinazucar.jpg"
+        },
+        {
+            "producto": "Alimento Líquido de Macadamia (sin azucar)", 
+            "precio": 35, 
+            "id": 306,
+            "stock": 0,
+            "descripcion": "Alimento líquido de macadamia orgánico sin azucar. 500ml.",
+            "image": "../../imagenes/bebida_macadamia_sinazucar.jpg"
+        },
+        {
+            "producto": "Jugo orgánico de manzana", 
+            "precio": 30, 
+            "id": 307,
+            "stock": 20,
+            "descripcion": "Jugo de Manzana orgánico y natural",
+            "image": "../../imagenes/jugo_manzana.jpg"
+        }
+    ]
+}
+

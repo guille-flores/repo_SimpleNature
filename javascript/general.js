@@ -5,11 +5,13 @@ var carrito = JSON.parse(localStorage.getItem("carrito")) || []; //if the shoppi
 
 //Definiendo las clases que son los productos
 class NewProduct{
-    constructor(product, price, id, stock){
+    constructor(product, price, id, stock, description, image){
         this.product = product.charAt(0).toUpperCase() + product.slice(1).toLowerCase(); //To capitalize first letter only
         this.price = price;
         this.id = id;
         this.stock = stock;
+        this.description = description;
+        this.image = image;
     }
 
     addOrder(){
@@ -59,41 +61,84 @@ var total = 0
 const productos = [];
 
 //Definiendo un fetch para simular la conexion con un JSON y obtener los productos
+fetch("../../javascript/productos.json")
+    .then((response)=> response.json())
+    .then((json)=> {
+        let leguminosas_html = document.getElementById("Leguminosas y Legumbres");
+        leguminosas_html.innerHTML = ""
+        json["Leguminosas y Legumbres"].forEach(element => { 
+            productos.push(new NewProduct(element.producto, element.precio, element.id, element.stock, element.descripcion, element.image));
+            leguminosas_html.innerHTML +=
+            `
+            <div class="card m-md-4 col-6 col-md-3 p-md-0 p-2">
+                    <div class="flipcard d-flex justify-content-center align-items-center flex-grow-1">
+                        <div class="flip__back d-md-flex justify-content-center align-items-center position-absolute text-center p-4 h-100 overflow-auto">
+                            <p>${element.descripcion}</p>
+                        </div>
+                        <div class="flip__front d-md-flex justify-content-center align-items-center">
+                            <img src=${element.image} alt="Lenteja Criolla" class="card-img">
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex flex-column justify-content-center align-items-center">
+                        <h5 class="text-center">${element.producto}</h5>
+                        <button type="button" class="btn btn-secondary" onclick="agregarCarrito(${element.id})">Agregar al carrito</button>
+                    </div>
+            </div>
+            `
+        });
+        let cereales_html = document.getElementById("Cereales");
+        cereales_html.innerHTML = ""
+        json["Cereales"].forEach(element => { 
+            productos.push(new NewProduct(element.producto, element.precio, element.id, element.stock, element.descripcion, element.image));
+            cereales_html.innerHTML +=
+            `
+            <div class="card m-md-4 col-6 col-md-3 p-md-0 p-2">
+                    <div class="flipcard d-flex justify-content-center align-items-center flex-grow-1">
+                        <div class="flip__back d-md-flex justify-content-center align-items-center position-absolute text-center p-4 h-100 overflow-auto">
+                            <p>${element.descripcion}</p>
+                        </div>
+                        <div class="flip__front d-md-flex justify-content-center align-items-center">
+                            <img src=${element.image} alt="Lenteja Criolla" class="card-img">
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex flex-column justify-content-center align-items-center">
+                        <h5 class="text-center">${element.producto}</h5>
+                        <button type="button" class="btn btn-secondary" onclick="agregarCarrito(${element.id})">Agregar al carrito</button>
+                    </div>
+            </div>
+            `
+        });
+        let bebidas_html = document.getElementById("Bebidas");
+        bebidas_html.innerHTML = ""
+        json["Bebidas"].forEach(element => { 
+            productos.push(new NewProduct(element.producto, element.precio, element.id, element.stock, element.descripcion, element.image));
+            bebidas_html.innerHTML +=
+            `
+            <div class="card m-md-4 col-6 col-md-3 p-md-0 p-2">
+                    <div class="flipcard d-flex justify-content-center align-items-center flex-grow-1">
+                        <div class="flip__back d-md-flex justify-content-center align-items-center position-absolute text-center p-4 h-100 overflow-auto">
+                            <p>${element.descripcion}</p>
+                        </div>
+                        <div class="flip__front d-md-flex justify-content-center align-items-center">
+                            <img src=${element.image} alt="Lenteja Criolla" class="card-img">
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex flex-column justify-content-center align-items-center">
+                        <h5 class="text-center">${element.producto}</h5>
+                        <button type="button" class="btn btn-secondary" onclick="agregarCarrito(${element.id})">Agregar al carrito</button>
+                    </div>
+            </div>
+            `
+        });
+    })
+    
 
-
-productos.push(new NewProduct("ChIA", 50, "chia", 5));
-productos.push(new NewProduct("lenteja criolla", 50, "lenteja_criolla", 1));
-productos.push(new NewProduct("Frijol Negro", 30, "frijol_negro", 2));
-productos.push(new NewProduct("Frijol Pinto", 30, "frijol_pinto", 2));
-productos.push(new NewProduct("Arroz Blanco", 20, "arroz_blanco", 1));
-productos.push(new NewProduct("Arroz Integral", 25, "arroz_integral", 0));
-productos.push(new NewProduct("Bebida de Coco", 25,"agua_coco", 4));
-productos.push(new NewProduct("Alimento Líquido de Coco", 25,"leche_coco", 4));
-productos.push(new NewProduct("Bebida de Coco sin Azúcar", 25,"agua_coco_sa", 4));
-productos.push(new NewProduct("Bebida de Almendras", 25,"agua_almendras", 4));
-productos.push(new NewProduct("Bebida de Almendras sin Azúcar", 30, "agua_almendras_sa", 10));
-productos.push(new NewProduct( "Alimento Líquido de Macadamia", 18, "agua_macadamia", 2));
-productos.push(new NewProduct("Jugo de Manzana", 80, "jugo_manzana", 5));
 localStorage.setItem("productos", JSON.stringify(productos));
 
 var botones = [];
 for (let ii=0; ii<productos.length; ii++){
     botones[ii] = document.getElementById(productos[ii].id);
 }
-
-botones[0].onclick = () => {agregarCarrito(productos[0].id)}; 
-botones[1].onclick = () => {agregarCarrito(productos[1].id)}; 
-botones[2].onclick = () => {agregarCarrito(productos[2].id)}; 
-botones[3].onclick = () => {agregarCarrito(productos[3].id)}; 
-botones[4].onclick = () => {agregarCarrito(productos[4].id)}; 
-botones[5].onclick = () => {agregarCarrito(productos[5].id)}; 
-botones[6].onclick = () => {agregarCarrito(productos[6].id)}; 
-botones[7].onclick = () => {agregarCarrito(productos[7].id)}; 
-botones[8].onclick = () => {agregarCarrito(productos[8].id)}; 
-botones[9].onclick = () => {agregarCarrito(productos[9].id)}; 
-botones[10].onclick = () => {agregarCarrito(productos[10].id)}; 
-botones[11].onclick = () => {agregarCarrito(productos[11].id)}; 
-botones[12].onclick = () => {agregarCarrito(productos[12].id)}; 
 
 function agregarCarrito(id){
     productos[productos.map(function(x){return x.id}).indexOf(id)].addOrder();
