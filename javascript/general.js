@@ -76,7 +76,7 @@ fetch("../../javascript/productos.json")
                             <p>${element.descripcion}</p>
                         </div>
                         <div class="flip__front d-md-flex justify-content-center align-items-center">
-                            <img src=${element.image} alt="Lenteja Criolla" class="card-img">
+                            <img src=${element.image} alt="${element.descripcion}" class="card-img">
                         </div>
                     </div>
                     <div class="card-footer d-flex flex-column justify-content-center align-items-center">
@@ -98,7 +98,7 @@ fetch("../../javascript/productos.json")
                             <p>${element.descripcion}</p>
                         </div>
                         <div class="flip__front d-md-flex justify-content-center align-items-center">
-                            <img src=${element.image} alt="Lenteja Criolla" class="card-img">
+                            <img src=${element.image} alt="${element.descripcion}" class="card-img">
                         </div>
                     </div>
                     <div class="card-footer d-flex flex-column justify-content-center align-items-center">
@@ -120,7 +120,7 @@ fetch("../../javascript/productos.json")
                             <p>${element.descripcion}</p>
                         </div>
                         <div class="flip__front d-md-flex justify-content-center align-items-center">
-                            <img src=${element.image} alt="Lenteja Criolla" class="card-img">
+                            <img src=${element.image} alt="${element.descripcion}" class="card-img">
                         </div>
                     </div>
                     <div class="card-footer d-flex flex-column justify-content-center align-items-center">

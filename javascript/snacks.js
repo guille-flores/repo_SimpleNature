@@ -5,11 +5,13 @@ var carrito = JSON.parse(localStorage.getItem("carrito")) || []; //if the shoppi
 
 //Definiendo las clases que son los productos
 class NewProduct{
-    constructor(product, price, id, stock){
+    constructor(product, price, id, stock, description, image){
         this.product = product.charAt(0).toUpperCase() + product.slice(1).toLowerCase(); //To capitalize first letter only
         this.price = price;
         this.id = id;
         this.stock = stock;
+        this.description = description;
+        this.image = image;
     }
 
     addOrder(){
@@ -58,22 +60,41 @@ class NewProduct{
 var total = 0
 const productos = [];
 
-productos.push(new NewProduct("Almendras Cubiertas con Chocolate Amargo", 80, "almendras_cubiertas_chocolate", 5));
-productos.push(new NewProduct( "Chocolate", 18, "chocolate_90", 2));
-productos.push(new NewProduct("Almendras", 80, "almendras", 0));
-productos.push(new NewProduct("Coco Rayado", 80, "coco_rayado", 3));
+//Definiendo un fetch para simular la conexion con un JSON y obtener los productos
+const productBuilder = async () => {
+    var resp = await fetch("../../javascript/productos.json");
+    var json = await resp.json()
+    let snacks_html = document.getElementById("Chocolates y Snacks");
+    snacks_html.innerHTML = ""
+    json["Snacks"].forEach(element => { 
+        productos.push(new NewProduct(element.producto, element.precio, element.id, element.stock, element.descripcion, element.image));
+        snacks_html.innerHTML +=
+        `
+        <div class="card m-md-4 col-6 col-md-3 p-md-0 p-2">
+                <div class="flipcard d-flex justify-content-center align-items-center flex-grow-1">
+                    <div class="flip__back d-md-flex justify-content-center align-items-center position-absolute text-center p-4 h-100 overflow-auto">
+                        <p>${element.descripcion}</p>
+                    </div>
+                    <div class="flip__front d-md-flex justify-content-center align-items-center">
+                        <img src=${element.image} alt="${element.descripcion}" class="card-img">
+                    </div>
+                </div>
+                <div class="card-footer d-flex flex-column justify-content-center align-items-center">
+                    <h5 class="text-center">${element.producto}</h5>
+                    <button type="button" class="btn btn-secondary" onclick="agregarCarrito(${element.id})">Agregar al carrito</button>
+                </div>
+        </div>
+        `
+    });
+}
+productBuilder()
+
+localStorage.setItem("productos", JSON.stringify(productos));
 
 var botones = [];
 for (let ii=0; ii<productos.length; ii++){
     botones[ii] = document.getElementById(productos[ii].id);
 }
-
-console.log(botones.length)
-console.log(botones[13])
-botones[0].onclick = () => {total = total + agregarCarrito(productos[0].id)}; 
-botones[1].onclick = () => {total = total + agregarCarrito(productos[1].id)};
-botones[2].onclick = () => {total = total + agregarCarrito(productos[2].id)}; 
-botones[3].onclick = () => {total = total + agregarCarrito(productos[3].id)};  
 
 function agregarCarrito(id){
     productos[productos.map(function(x){return x.id}).indexOf(id)].addOrder();

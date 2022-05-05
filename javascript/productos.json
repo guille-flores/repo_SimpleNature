@@ -111,6 +111,127 @@
             "descripcion": "Jugo de Manzana orgánico y natural",
             "image": "../../imagenes/jugo_manzana.jpg"
         }
+    ],
+    "Snacks":
+    [
+        {
+            "producto": "Almendras cubiertas con Chocolate Amargo", 
+            "precio": 70, 
+            "id": 401,
+            "stock": 50,
+            "descripcion": "Almendras orgánicas cubiertas de chocolate amargo (90% cacao) sin azucar añadida.",
+            "image": "../../imagenes/almendra_chocolate.png"
+        },
+        {
+            "producto": "Almendras", 
+            "precio": 30, 
+            "id": 402,
+            "stock": 20,
+            "descripcion": "Almedras orgánicas. 100gr.",
+            "image": "../../imagenes/almendras.png"
+        },
+        {
+            "producto": "Chocolate Amargo (90%)", 
+            "precio": 90, 
+            "id": 403,
+            "stock": 5,
+            "descripcion": "Barra de chocolate amargo hecho de 90% cacao.",
+            "image": "../../imagenes/chocolate_obscuro.png"
+        },
+        {
+            "producto": "Coco Rallado", 
+            "precio": 10, 
+            "id": 404,
+            "stock": 0,
+            "descripcion": "Coco rallado orgánico. 100gr.",
+            "image": "../../imagenes/coco_rallado.png"
+        }
+    ],
+    "Aceites y Untables":
+    [
+        {
+            "producto": "Aceite de Aguacate", 
+            "precio": 110, 
+            "id": 501,
+            "stock": 0,
+            "descripcion": "Aceite de Aguacate orgánico. 500ml.",
+            "image": "../../imagenes/aceite_aguacate.png"
+        },
+        {
+            "producto": "Aceite de Coco", 
+            "precio": 150, 
+            "id": 502,
+            "stock": 20,
+            "descripcion": "Aceite de Coco orgánico extra virgen. 500ml.",
+            "image": "../../imagenes/aceite_coco.png"
+        },
+        {
+            "producto": "Aceite de Girasol", 
+            "precio": 90, 
+            "id": 503,
+            "stock": 1,
+            "descripcion": "Aceite de Girasol orgánico. 500ml.",
+            "image": "../../imagenes/aceite_girasol.png"
+        },
+        {
+            "producto": "Aceite de Oliva", 
+            "precio": 120, 
+            "id": 504,
+            "stock": 20,
+            "descripcion": "Aceite de Oliva extra virgen. 500ml. Prensado en frío.",
+            "image": "../../imagenes/aceite_oliva.png"
+        },
+        {
+            "producto": "Crema de Cacahuate", 
+            "precio": 120, 
+            "id": 505,
+            "stock": 10,
+            "descripcion": "Crema de cacahuate orgánica, con 99.3% cacahuate.",
+            "image": "../../imagenes/peanut_butter.png"
+        }
+    ],
+    "Selfcare":
+    [
+        {
+            "producto": "Jabón de Castilla", 
+            "precio": 50, 
+            "id": 601,
+            "stock": 20,
+            "descripcion": "Jabón sólido de Castilla. Elaborado por Indra.",
+            "image": "../../imagenes/jabon_castilla_indra.png"
+        },
+        {
+            "producto": "Jabón de Lavanda y Romero", 
+            "precio": 60, 
+            "id": 602,
+            "stock": 0,
+            "descripcion": "Jabón sólido de Lavanda y Romero. Elaborado por Indra.",
+            "image": "../../imagenes/jabon_lavanda_indra.png"
+        },
+        {
+            "producto": "Jabón de Vainilla y Jazmín", 
+            "precio": 40, 
+            "id": 603,
+            "stock": 2,
+            "descripcion": "Jabón sólido de Vainilla y Jazmín. Elaborado por Indra.",
+            "image": "../../imagenes/jabon_vainilla_indra.png"
+        },
+        {
+            "producto": "Cepillo de Bambú", 
+            "precio": 90, 
+            "id": 604,
+            "stock": 0,
+            "descripcion": "Cepillo de Bambú",
+            "image": "../../imagenes/cepillo_dientes.jpg"
+        },
+        {
+            "producto": "Pasta de Dientes", 
+            "precio": 100, 
+            "id": 605,
+            "stock": 1,
+            "descripcion": "Pasta de dientes sólida.",
+            "image": "../../imagenes/pasta_dientes_solida.jpg"
+        }
     ]
 }
 
