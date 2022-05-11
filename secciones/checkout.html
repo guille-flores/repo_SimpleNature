@@ -56,26 +56,116 @@
         </nav>
     </header>
     <main class="mainpage" id="mainpage__checkout">
-        <div class="sticky-top top-0 d-flex justify-content-end">
-            <table class="table table-striped table-bordered m-md-5 text-center">
-                <thead>
-                    <tr>
-                        <th scope="col">Producto</th>
-                        <th scope="col">Precio</th>
-                        <th scope="col">Cantidad</th>
-                        <th scope="col">Total por Producto</th>
-                        <th scope="col">Eliminar del Carrito</th>
-                    </tr>
-                </thead>
-                <tbody id="tcarrito">
-                    
-                </tbody>
-                <tfoot id="carritototal">
-                    <tr>
-                        <td>Total:</td><td>0</td><td><button class="btn btn-success" id="payment_btn">Pagar</button></td>
-                    </tr>
-                </tfoot>    
-            </table>    
+        <div class="container" id="payment">
+            <form class="form p-3"  action="#" method="get" id="formCheckout">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <h3>Información de Contacto y Entrega</h3>
+                                <div class="form-group">
+                                    <label for="email"><i class="fa fa-envelope"></i> Correo Electrónico</label>
+                                    <div class="form-group">
+                                        <input type="text" id="email" name="email" placeholder="usuario@ejemplo.com">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state"><i class="fa fa-institution"></i> Estado: </label>
+                                <div class="form-group">
+                                </div>    
+                                    <input type="text" id="state" name="state" placeholder="Nuevo León">
+                                </div>
+                                <label for="city"><i class="fa fa-institution"></i> Ciudad: </label>
+                                <div class="form-group">
+                                    <input type="text" id="city" name="city" placeholder="Monterrey">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="direccion"><i class="fa fa-home"></i> Calle: </label>
+                                    <div class="form-group">
+                                        <input type="text" id="adr" name="address" placeholder="Av. Lopez Mateos">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="housenum"><i class="fa fa-home"></i> Número Ext.: </label>
+                                    <div class="form-group">
+                                        <input type="text" id="ext" name="ext" placeholder="500">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="housenum"><i class="fa fa-home"></i> Número Int.: </label>
+                                    <div class="form-group">
+                                        <input type="text" id="int" name="int" placeholder="C101">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h3>Información de Pago</h3>
+                            <div class="icon-container">
+                              <i class="fa fa-cc-visa" style="color:navy;"></i>
+                              <i class="fa fa-cc-amex" style="color:rgba(13, 60, 179, 0.88);"></i>
+                              <i class="fa fa-cc-mastercard" style="color:rgb(255, 128, 0);"></i>
+                            </div>
+                            <label for="cardname"><i class="fa fa-user"></i> Nombre como aparece en la tarjeta: </label>
+                            <div class="form-group">
+                                <input type="text" id="cardname" name="cardname" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="ccnum">Número de Tarjeta</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="ccnum" name="ccnum" placeholder="1111-2222-3333-4444">
+                            </div>
+                            <div class="form-group">
+                                <label for="cexp">Expiración</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="cexp" name="cexp" placeholder="MM/AA">
+                            </div>
+                            <div class="form-group">
+                                <label for="ccv">CCV</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="ccv" name="ccv" placeholder="123">
+                            </div>
+                            <div class="form-group mt-3 mb-2" id="totalcheckout">
+                                <strong>Total = </strong> 
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" id="submitcheckout" name="submitcheckout" value="Pagar">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <table class="table table-striped table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Total por Producto</th>
+                                <th scope="col">Eliminar del Carrito</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tcarrito">
+                            
+                        </tbody>
+                        <tfoot id="carritototal">
+                            <tr>
+                                <td>Total:</td><td>0</td><td><button class="btn btn-success" id="payment_btn">Pagar</button></td>
+                            </tr>
+                        </tfoot>    
+                    </table>    
+                </div>
+            </div>
         </div>
     </main>
     <footer id="contact">

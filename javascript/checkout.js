@@ -33,7 +33,7 @@ function crearProductoCarrito(){
     footercarrito.innerHTML = 
     `
     <tr>
-        <td class="right" colspan="3">Total:</td><td class="right">$${total}</td><td><button class="btn btn-success" >Pagar</button></td>
+        <td class="right" colspan="3">Total:</td><td class="right">$${total}</td><td><button class="btn btn-success" onClick="checkoutPago(${total})">Proceder al Pago</button></td>
     </tr>
     `;
     localStorage.setItem("carrito", JSON.stringify(carrito)); //updating the shopping car
@@ -71,4 +71,33 @@ function eliminarArticulo(ii){
       })
 }
 
+
+function checkoutPago(total){
+    let checkoutPago = document.getElementById("payment");
+    checkoutPago.style.display = "block";
+    let totalPago = document.getElementById("totalcheckout")
+    totalPago.innerHTML = `Total = $${total}`
+}
+
+let form = document.getElementById("formCheckout")
+form.onsubmit = function(){
+    Swal.fire({
+        title: '¿Estás seguro de que deseas realizar el pago?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡Sí, lo quiero!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                icon: 'success',
+                title: '¡Gracias! Te notificaremos por medio de correo electrónico la información de tu pedido.',
+                showConfirmButton: false,
+                timer: 4000
+              })
+        }
+      })
+    document.getElementById("payment").style.display = "none";
+}
 

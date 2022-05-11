@@ -1,6 +1,3 @@
-const user = JSON.parse(sessionStorage.getItem("usuario")) || prompt("¡Bienvenido a Simple Nature!\n\nIngrese su nombre: "); //obtaining the user name or not if it already exists
-sessionStorage.setItem("usuario", JSON.stringify(user));
-
 var carrito = JSON.parse(localStorage.getItem("carrito")) || []; //if the shopping car has items, it will use it, otherwise will create the empty list to store the items to select
 
 //Definiendo las clases que son los productos
