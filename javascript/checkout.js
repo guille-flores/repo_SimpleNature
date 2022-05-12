@@ -73,10 +73,14 @@ function eliminarArticulo(ii){
 
 
 function checkoutPago(total){
-    let checkoutPago = document.getElementById("payment");
-    checkoutPago.style.display = "block";
-    let totalPago = document.getElementById("totalcheckout")
-    totalPago.innerHTML = `Total = $${total}`
+    if (total > 0) {
+        let checkoutPago = document.getElementById("payment");
+        checkoutPago.style.display = "block";
+        let totalPago = document.getElementById("totalcheckout")
+        totalPago.innerHTML = `Total = $${total}`
+    }else{
+        Swal.fire('¡No podemos proceder a un pago!\nTu carrito está vacío.');
+    }
 }
 
 let form = document.getElementById("formCheckout")
@@ -101,3 +105,6 @@ form.onsubmit = function(){
     document.getElementById("payment").style.display = "none";
 }
 
+document.getElementById("closeCheckout").addEventListener("click", function(){
+    document.getElementById("payment").style.display = "none";
+})
