@@ -64,6 +64,12 @@ const productBuilder = async () => {
     let aceites_html = document.getElementById("Aceites y Untables");
         aceites_html.innerHTML = ""
         json["Aceites y Untables"].forEach(element => { 
+            try{
+                let incheckout = carrito.find(item => {
+                    return item.producto.toUpperCase() == element.producto.toUpperCase() //to decrease the stock if the user already has some in the shopping car
+                });
+                element.stock -= incheckout.cantidad
+            }catch{}
             productos.push(new NewProduct(element.producto, element.precio, element.id, element.stock, element.descripcion, element.image));
             aceites_html.innerHTML +=
             `

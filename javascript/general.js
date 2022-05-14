@@ -64,6 +64,13 @@ fetch("../../javascript/productos.json")
         let leguminosas_html = document.getElementById("Leguminosas y Legumbres");
         leguminosas_html.innerHTML = ""
         json["Leguminosas y Legumbres"].forEach(element => { 
+            try{
+                let incheckout = carrito.find(item => {
+                    return item.producto.toUpperCase() == element.producto.toUpperCase() //to decrease the stock if the user already has some in the shopping car
+                });
+                element.stock -= incheckout.cantidad
+            }catch{}
+
             productos.push(new NewProduct(element.producto, element.precio, element.id, element.stock, element.descripcion, element.image));
             leguminosas_html.innerHTML +=
             `
@@ -86,6 +93,12 @@ fetch("../../javascript/productos.json")
         let cereales_html = document.getElementById("Cereales");
         cereales_html.innerHTML = ""
         json["Cereales"].forEach(element => { 
+            try{
+                let incheckout = carrito.find(item => {
+                    return item.producto.toUpperCase() == element.producto.toUpperCase() //to decrease the stock if the user already has some in the shopping car
+                });
+                element.stock -= incheckout.cantidad
+            }catch{}
             productos.push(new NewProduct(element.producto, element.precio, element.id, element.stock, element.descripcion, element.image));
             cereales_html.innerHTML +=
             `
@@ -108,6 +121,12 @@ fetch("../../javascript/productos.json")
         let bebidas_html = document.getElementById("Bebidas");
         bebidas_html.innerHTML = ""
         json["Bebidas"].forEach(element => { 
+            try{
+                let incheckout = carrito.find(item => {
+                    return item.producto.toUpperCase() == element.producto.toUpperCase() //to decrease the stock if the user already has some in the shopping car
+                });
+                element.stock -= incheckout.cantidad
+            }catch{}
             productos.push(new NewProduct(element.producto, element.precio, element.id, element.stock, element.descripcion, element.image));
             bebidas_html.innerHTML +=
             `

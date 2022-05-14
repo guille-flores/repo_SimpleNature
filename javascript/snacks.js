@@ -64,6 +64,12 @@ const productBuilder = async () => {
     let snacks_html = document.getElementById("Chocolates y Snacks");
     snacks_html.innerHTML = ""
     json["Snacks"].forEach(element => { 
+        try{
+            let incheckout = carrito.find(item => {
+                return item.producto.toUpperCase() == element.producto.toUpperCase() //to decrease the stock if the user already has some in the shopping car
+            });
+            element.stock -= incheckout.cantidad
+        }catch{}
         productos.push(new NewProduct(element.producto, element.precio, element.id, element.stock, element.descripcion, element.image));
         snacks_html.innerHTML +=
         `
